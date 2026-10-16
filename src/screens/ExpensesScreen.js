@@ -1,4 +1,5 @@
-import { View, Text, FlatList, StyleSheet } from 'react-native';
+import { View, Text, FlatList, StyleSheet, Button } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const Gastos_Prueba = [
     { id: '1', descripcion: 'Supermercado', monto: 25000 },
@@ -7,6 +8,8 @@ const Gastos_Prueba = [
 ];
 
 export default function ExpensesScreen(){
+    const navigation = useNavigation();
+
     const vistaGastos = ({item}) =>(
         <View style={styles.itemContainer}>
             <Text style={styles.descripcion}>{item.descripcion}</Text>
@@ -16,12 +19,21 @@ export default function ExpensesScreen(){
     return(
         <View style={styles.container}>
             <Text style={styles.titulo}>Mis Gastos</Text>
+
             <FlatList
                 data={Gastos_Prueba}
                 keyExtractor={(item) => item.id}
                 renderItem={vistaGastos}
                 contentContainerStyle={styles.lista}
             />
+
+            <View style={{ marginBottom: 15 }}>
+                <Button 
+                    title="+ Añadir Gasto" 
+                    color="#2c3e50"
+                    onPress={() => navigation.navigate('NuevoGasto')} 
+                />
+            </View>
         </View>
     );
 }

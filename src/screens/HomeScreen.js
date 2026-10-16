@@ -14,11 +14,11 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1, 
         backgroundColor: '#fffefe',
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20,
-        marginVertical: 30,
     },
     title: {
         fontSize: 42,

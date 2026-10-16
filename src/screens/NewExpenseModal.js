@@ -32,14 +32,17 @@ const styles = StyleSheet.create({
     input: {
         borderWidth: 2,
         borderColor: '#080808',
-        padding: 25,
+        padding: 20,
         borderRadius: 20,
         marginBottom: 15,
         paddingHorizontal: 16,
+        backgroundColor: '#ffffff',
 
     },
     container: {
+        flex: 1,
         justifyContent: 'center',
-        width: '70%',
+        paddingHorizontal: 20, 
+        backgroundColor: '#fffefe',
     }
-})
+});

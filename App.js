@@ -2,24 +2,15 @@ import { StatusBar } from 'expo-status-bar';
 import HomeScreen from './src/screens/HomeScreen';
 import NewExpenseModal from './src/screens/NewExpenseModal';
 import ExpensesScreen from './src/screens/ExpensesScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import StackNavigator from './src/navigation/StackNavigator';
 import { View, StyleSheet } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.appContainer}>
-      <HomeScreen />
-      <NewExpenseModal />
+    <NavigationContainer>
+      <StackNavigator />
       <StatusBar style="auto" />
-    </View>
+    </NavigationContainer>
   );
 }
-const styles = StyleSheet.create({
-  appContainer: {
-    flex: 1,
-    backgroundColor: '#fffefe',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    paddingTop: 80,
-    gap: 10,
-  },
-});
